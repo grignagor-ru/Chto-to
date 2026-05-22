@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <h1>FocusFlow</h1>
+
+      <section class="card">
+        <h2>API / Colab</h2>
+        <div class="row">
+          <input id="api-url" placeholder="https://<ngrok>.ngrok-free.app" />
+          <button id="save-api-btn">Сохранить API</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Задачи на день</h2>
+        <div class="row">
+          <input id="todo-input" placeholder="Что сделать?" />
+          <button id="add-todo-btn">Добавить</button>
+        </div>
+        <ul id="todo-list"></ul>
+        <p>Выполнено: <span id="done-count">0</span></p>
+      </section>
+
+      <section class="card">
+        <h2><span id="timer-label">Фокус</span></h2>
+        <p id="timer-value" class="timer">25:00</p>
+        <div class="row">
+          <button id="start-btn">Старт</button>
+          <button id="pause-btn">Пауза</button>
+          <button id="reset-btn" class="danger">Сброс</button>
+        </div>
+        <div class="row settings">
+          <label>Фокус <input id="work-minutes" type="number" min="1" /></label>
+          <label>Перерыв <input id="break-minutes" type="number" min="1" /></label>
+        </div>
+        <p>Всего фокус-сессий: <span id="focus-count">0</span></p>
+      </section>
+
+      <section class="card">
+        <h2>Статистика за 7 дней</h2>
+        <p>Фокус-сессии: <span id="week-focus">0</span></p>
+        <p>Закрытые задачи: <span id="week-done">0</span></p>
+      </section>
+
+      <section class="card">
+        <h2>Напоминание через бота</h2>
+        <label>Когда <input id="reminder-at" type="datetime-local" /></label>
+        <label>Текст <input id="reminder-text" placeholder="Начни фокус-сессию" /></label>
+        <button id="set-reminder-btn">Поставить напоминание</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
